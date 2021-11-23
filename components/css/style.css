@@ -106,9 +106,28 @@ button, .link__btn {
 	border: 2px solid var(--dark-blue);
 }
 
+@media screen and (max-width: 510px) {
+	.webinar-card * {
+		font-size: var(--regular-fs);
+	}
+
+	.webinar-card .wc--header {
+		font-size: var(--subheading-fs);
+	}
+}
+
+
 .webinar-card hr {
 	color: var(--dark-blue);
-	/* margin-bottom: 18px; */
+	background-color: var(--dark-blue);
+	appearance: none;
+	-webkit-appearance: none;
+	height: 2px;
+	margin: 0;
+}
+
+.webinar-card .wc--heading h3 {
+	margin-bottom: 18px;
 }
 
 .wc--header {
@@ -135,6 +154,7 @@ button, .link__btn {
 	row-gap: 18px;
 	padding: 10px 21px 21px;
 }
+
 
 .wc__nobtns .wc--body {
 	grid-template-rows: max-content max-content;
