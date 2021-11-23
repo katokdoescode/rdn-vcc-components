@@ -66,7 +66,7 @@
 			<br>
 		</section>
 		<section class="controls">
-			<label for="wider">Ширина экрана: <span id="scr_wide">1000</span>px.</label><br>
+			<label for="wider">Ширина контейнера: <span id="scr_wide">1000</span>px.</label><br>
 			<input type="range" value="1000" name="wider" id="wider" min="320" max="1200" oninput="changeWide(this.value)" autocomplete='off'>
 			<br>
 			<input type="radio" name="type" id="planned" onclick="changeType(this.id)" checked autocomplete='off'>
@@ -97,17 +97,11 @@
 				if(bool === true) {
 					e.classList.replace('wc__nobtns', 'wc__btns')
 					e.querySelector('.btn__white').style.cssText = 'display: none !important'
-					e.querySelector('.wc--footer').style.cssText = 'display: flex'
-					e.querySelector('.wc--main').style.cssText = 'grid-column: unset'
 				} else if (bool === false) {
 					e.classList.replace('wc__nobtns', 'wc__btns')
 					e.querySelector('.btn__white').style.cssText = 'display: block !important'	
-					e.querySelector('.wc--footer').style.cssText = 'display: flex'
-					e.querySelector('.wc--main').style.cssText = 'grid-column: unset'
 				} else {
 					e.classList.replace('wc__btns', 'wc__nobtns')
-					e.querySelector('.wc--footer').style.cssText = 'display: none !important'
-					e.querySelector('.wc--main').style.cssText = 'grid-column: span 2 !important'
 				}
 			}) 
 		}
