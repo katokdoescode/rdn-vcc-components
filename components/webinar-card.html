@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Карточка вебинара</title>
+	<script src="https://unpkg.com/spacingjs" defer></script>
+	<style>
+		.controls {
+			width: 200px;
+			padding: 10px;
+			position: fixed;
+			bottom: 0;
+			background-color: white;
+			box-shadow: 2px -2px #f2f2f2;
+		}
+
+		#dynamic_container .webinar-card {
+			margin-bottom: 50px;
+
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Карточка вебинара</h1>
+		<nav>
+			<a href="/">⬅️ Назад к списку</a>
+		</nav>
+		<p>Наверди курсор на элемент и нажми ALT, затем наведи курсор на другой элемент и увидишь расстояния и размеры.</p>
+		<br>
+		<!-- 
+			webinar-card (wc)
+			webinar-card__two-rows
+
+			wc__planned - Запланированный вебинар
+			wc__on-air - Вебинар в эфире
+			wc__past - Прошедщий вебинар
+		 -->
+		<section id="dynamic_container" style="margin: 0 auto; width: 1000px;">
+			<div class="webinar-card webinar-card__two-rows wc__planned">
+				<div class="wc--header">
+					<span>16:00</span>
+					<span>02.12.2012</span>
+				</div>
+				<div class="wc--body">
+					<div class="wc--heading">
+						<h3>“Обзор актуальных методик Министерства строительства и жилищно-коммунального хозяйства”</h3>
+						<hr>
+					</div>
+					<div class="wc--main">
+						<ul class="wc--speakers">
+							<li><span class="hl__blue">ФАУ “РОСДОРНИИ”:</span> Макаров Е.Н. </li>
+							<li><span class="hl__blue">Российский университет транспорта (МИИТ):</span>  Гринчар Н. Н.</li>
+							<li><span class="hl__blue">Институт строительства и ЖКХ НИУ «Высшая школа экономики»:</span> Кулакова Н. В.</li>
+						</ul>
+					</div>
+					<div class="wc--footer">
+						<a href="#" class="link__btn btn__white">Подробнее</a>
+						<a href="#" class="link__btn btn__blue">Записаться</a>
+					</div>
+				</div>
+			</div>
+			<br>
+		</section>
+		<section class="controls">
+			<label for="wider">Ширина экрана: <span id="scr_wide">1000</span>px.</label><br>
+			<input type="range" value="1000" name="wider" id="wider" min="320" max="1200" oninput="changeWide(this.value)" autocomplete='off'>
+			<br>
+			<input type="radio" name="type" id="planned" onclick="changeType(this.id)" checked autocomplete='off'>
+			<label for="planned">Запланированный</label><br>
+			<input type="radio" name="type" id="on-air" onclick="changeType(this.id)" autocomplete='off'>
+			<label for="on-air">В эфире</label><br>
+			<input type="radio" name="type" id="past" onclick="changeType(this.id)" autocomplete='off'>
+			<label for="past">Прошедщий</label>
+			<hr>
+			<input type="radio" name="grid" id="rigth"  onclick="changeGrid(true)" checked autocomplete='off'>
+			<label for="rigth">Кнопки справа</label><br>
+			<input type="radio" name="grid" id="bottom" onclick="changeGrid(false)" autocomplete='off'>
+			<label for="bottom">Кнопки снизу</label>
+			<hr>
+			<input type="radio" name="btns" id="two" onclick="buttons(false)" checked autocomplete='off'>
+			<label for="two">Две кнопки</label><br>
+			<input type="radio" name="btns" id="one"  onclick="buttons(true)" autocomplete='off'>
+			<label for="one">Одна кнопка</label>
+		</section>
+	</main>
+	<script>
+
+		const buttons = (bool) => {
+			const cards = document.querySelectorAll('.webinar-card');
+			cards.forEach((e)=> {
+				if(bool) {
+					e.querySelector('.btn__white').style.cssText = 'display: none !important'
+				} else {
+					e.querySelector('.btn__white').style.cssText = 'display: block !important'	
+				}
+			}) 
+		}
+
+		const changeGrid = (bool) => {
+			const cards = document.querySelectorAll('.webinar-card');
+			cards.forEach((e)=> {
+				if(!bool) {
+					e.classList.replace('webinar-card__two-rows', 'heh')
+				} else {
+					e.classList.replace('heh', 'webinar-card__two-rows')
+				}
+			}) 
+		}
+
+		const changeType = (id) => {
+			const cards = document.querySelectorAll('.webinar-card');
+			for (let i = 0; i < cards.length; i++) {
+				const newClass = 'wc__' + id
+				console.log(cards[i].classList[cards[i].classList.length - 1])
+				const newCalssList = 'wc__' + id;
+				cards[i].classList.replace(cards[i].classList[cards[i].classList.length - 1], newCalssList)
+			}
+		}
+
+		const changeWide = (e) => {
+			const screen = document.getElementById('dynamic_container');
+			const counter = document.getElementById('scr_wide');
+			screen.style.width = e + 'px';
+			counter.innerHTML = e
+		}
+	</script>
+</body>
+</html>
