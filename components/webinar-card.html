@@ -40,7 +40,7 @@
 			wc__past - Прошедщий вебинар
 		 -->
 		<section id="dynamic_container" style="margin: 0 auto; width: 1000px;">
-			<div class="webinar-card webinar-card__two-rows wc__planned">
+			<div class="webinar-card webinar-card__two-rows wc__btns wc__planned">
 				<div class="wc--header">
 					<span>16:00</span>
 					<span>02.12.2012</span>
@@ -95,14 +95,17 @@
 			const cards = document.querySelectorAll('.webinar-card');
 			cards.forEach((e)=> {
 				if(bool === true) {
+					e.classList.replace('wc__nobtns', 'wc__btns')
 					e.querySelector('.btn__white').style.cssText = 'display: none !important'
 					e.querySelector('.wc--footer').style.cssText = 'display: flex'
 					e.querySelector('.wc--main').style.cssText = 'grid-column: unset'
 				} else if (bool === false) {
+					e.classList.replace('wc__nobtns', 'wc__btns')
 					e.querySelector('.btn__white').style.cssText = 'display: block !important'	
 					e.querySelector('.wc--footer').style.cssText = 'display: flex'
 					e.querySelector('.wc--main').style.cssText = 'grid-column: unset'
 				} else {
+					e.classList.replace('wc__btns', 'wc__nobtns')
 					e.querySelector('.wc--footer').style.cssText = 'display: none !important'
 					e.querySelector('.wc--main').style.cssText = 'grid-column: span 2 !important'
 				}

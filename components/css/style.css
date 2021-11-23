@@ -108,6 +108,7 @@ button, .link__btn {
 
 .webinar-card hr {
 	color: var(--dark-blue);
+	/* margin-bottom: 18px; */
 }
 
 .wc--header {
@@ -129,12 +130,24 @@ button, .link__btn {
 
 
 .wc--body {
+	display: grid;
+	grid-template-rows: max-content max-content max-content;
+	row-gap: 18px;
 	padding: 10px 21px 21px;
+}
+
+.wc__nobtns .wc--body {
+	grid-template-rows: max-content max-content;
 }
 
 .wc--body .wc--speakers {
 	list-style: none;
 	padding: 0;
+	margin: 0;
+}
+
+.wc--body .wc--speakers li:not(:last-child){
+	margin-bottom: 5px;
 }
 
 .wc--body .wc--speakers .hl__blue {
@@ -170,36 +183,36 @@ button, .link__btn {
 	border-radius: 3px 3px 0 0;
 }
 
+.wc__on-air {
+	border-color: var(--light-blue);
+}
+
 .wc__on-air .wc--header{
 	background-color: var(--light-blue);
-	border-radius: 9px 9px 0 0;
-	box-shadow: -2px -2px var(--light-blue),
-				2px -2px var(--light-blue),
-				2px 0 var(--light-blue),
-				-2px 0px var(--light-blue);
+	border-radius: 3px 3px 0 0;
 }
 
 .wc__past {
-	border-color: var(--light-gray);
+	border-color: var(--gray);
 }
 
 .wc__past .wc--header{
-	background-color: var(--light-gray);
+	background-color: var(--gray);
 	border-radius: 3px 3px 0 0;
 }
 
 .wc__past .link__btn,
 .wc__past button {
-	border-color: var(--light-gray);
-	color: var(--light-gray);
+	border-color: var(--dark-gray);
+	color: var(--dark-gray);
 }
 
 .wc__past .btn__blue {
-	background-color: var(--light-gray);
+	background-color: var(--dark-gray);
 	color: #ffffff;
 }
 
 .wc__past .wc--speakers .hl__blue,
 .wc__past hr {
-	color: var(--light-gray);
+	color: var(--gray);
 }
