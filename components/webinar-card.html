@@ -84,7 +84,9 @@
 			<input type="radio" name="btns" id="two" onclick="buttons(false)" checked autocomplete='off'>
 			<label for="two">Две кнопки</label><br>
 			<input type="radio" name="btns" id="one"  onclick="buttons(true)" autocomplete='off'>
-			<label for="one">Одна кнопка</label>
+			<label for="one">Одна кнопка</label><br>
+			<input type="radio" name="btns" id="none"  onclick="buttons('none')" autocomplete='off'>
+			<label for="none">Без кнопок</label>
 		</section>
 	</main>
 	<script>
@@ -92,10 +94,17 @@
 		const buttons = (bool) => {
 			const cards = document.querySelectorAll('.webinar-card');
 			cards.forEach((e)=> {
-				if(bool) {
+				if(bool === true) {
 					e.querySelector('.btn__white').style.cssText = 'display: none !important'
-				} else {
+					e.querySelector('.wc--footer').style.cssText = 'display: flex'
+					e.querySelector('.wc--main').style.cssText = 'grid-column: unset'
+				} else if (bool === false) {
 					e.querySelector('.btn__white').style.cssText = 'display: block !important'	
+					e.querySelector('.wc--footer').style.cssText = 'display: flex'
+					e.querySelector('.wc--main').style.cssText = 'grid-column: unset'
+				} else {
+					e.querySelector('.wc--footer').style.cssText = 'display: none !important'
+					e.querySelector('.wc--main').style.cssText = 'grid-column: span 2 !important'
 				}
 			}) 
 		}
@@ -118,6 +127,12 @@
 				console.log(cards[i].classList[cards[i].classList.length - 1])
 				const newCalssList = 'wc__' + id;
 				cards[i].classList.replace(cards[i].classList[cards[i].classList.length - 1], newCalssList)
+
+				if(id == 'on-air') {
+					document.querySelector('.wc--header').innerHTML = '<span class="on-air">Сейчас в эфире</span>'
+				} else {
+					document.querySelector('.wc--header').innerHTML = '<span>16:00</span><span>02.12.2012</span>'
+				}
 			}
 		}
 

@@ -121,6 +121,12 @@ button, .link__btn {
 	padding: 10px 21px;
 }
 
+.wc--header .on-air {
+	align-self: center;
+	text-align: center;
+	width: 100%;
+}
+
 
 .wc--body {
 	padding: 10px 21px 21px;
