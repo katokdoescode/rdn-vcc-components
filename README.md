@@ -1,2 +1,3 @@
-# rdn-vcc-components
-Components of RDN-VCC
+# Компоненты для ВКЦ
+Набор компонентов, которые будут испольщоваться при разработки сайта ВКЦ
+[Демо](https://katokdoescode.github.io/rdn-vcc-components/ "Демо")
