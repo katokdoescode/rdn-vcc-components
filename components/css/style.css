@@ -12,6 +12,17 @@
 	--subheading-fs: 24px;
 	--subheading-fw: 700;
 	--regular-fs: 18px; 
+
+	--logo-font-big-fs: 42px;
+	--logo-font-big-fw: 200;
+	--logo-font-ls: 5%;
+
+	--logo-font-small-fs:  16px;
+	--logo-font-small-ls: 20%;
+
+	--menu-fs: 14px;
+	--menu-level1-fw: 700;
+	--menu-level2-fw: 200;
 }
 
 *, *::before, *::after {
