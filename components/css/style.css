@@ -204,7 +204,8 @@ button, .link__btn {
 	grid-template-rows: max-content max-content;
 }
 
-.wc__nobtns .wc--main {
+.wc__nobtns .wc--main,
+.wc__nobtns .wc--heading {
 	grid-column: span 2;
 }
 
