@@ -31,7 +31,8 @@
 
 html {
 	font-family: 'PT Sans', sans-serif;
-	font-weight: var(--regular-fs);
+	font-weight: var(--regular-fw);
+	font-size: var(--regular-fs);
 }
 
 h1 {
@@ -150,6 +151,7 @@ button, .link__btn {
 	grid-template-rows: 61px 1fr;
 	border-radius: 9px;
 	border: 2px solid var(--dark-blue);
+	min-width: 224px;
 }
 
 @media screen and (max-width: 510px) {
@@ -214,9 +216,29 @@ button, .link__btn {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	min-width: 330px;
 }
 
-.wc--body .wc--speakers li:not(:last-child){
+@media screen and (max-width: 560px) {
+	.wc--body .wc--speakers {
+		min-width: 0;
+	}
+}
+
+.dl__theme dt,
+.dl__theme dd {
+	display: inline-block;
+}
+
+.dl__theme dt::after {
+	content: ': ';
+}
+
+.dl__theme dd {
+	margin: 0;
+}
+
+.wc--body .wc--speakers li:not(:last-child) {
 	margin-bottom: 5px;
 }
 
@@ -244,7 +266,7 @@ button, .link__btn {
 	column-gap: 10px;
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 560px) {
 	.webinar-card__two-rows .wc--body {
 		grid-template-rows: max-content max-content 1fr;
 	}

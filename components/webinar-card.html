@@ -21,6 +21,14 @@
 			margin-bottom: 50px;
 
 		}
+
+		.note {
+			margin: 0;
+			padding: 7px;
+			border-radius: 10px;
+			font-size: smaller;
+			border: 2px solid #f2f2f2;
+		}
 	</style>
 </head>
 <body>
@@ -40,7 +48,7 @@
 			wc__past - Прошедщий вебинар
 			wc__nobtns - карточка без кнопок
 		 -->
-		<section id="dynamic_container" style="margin: 0 auto; width: 1000px;">
+		<section id="dynamic_container" style="margin: 0 auto; ">
 			<div class="webinar-card webinar-card__two-rows wc__btns wc__planned">
 				<div class="wc--header">
 					<span>16:00</span>
@@ -52,11 +60,20 @@
 						<hr>
 					</div>
 					<div class="wc--main">
-						<ul class="wc--speakers">
-							<li><span class="hl__blue">ФАУ “РОСДОРНИИ”:</span> Макаров Е.Н. </li>
-							<li><span class="hl__blue">Российский университет транспорта (МИИТ):</span>  Гринчар Н. Н.</li>
-							<li><span class="hl__blue">Институт строительства и ЖКХ НИУ «Высшая школа экономики»:</span> Кулакова Н. В.</li>
-						</ul>
+						<dl class="wc--speakers dl__theme">
+							<div class="speakers--description">
+								<dt><span class="hl__blue">ФАУ “РОСДОРНИИ”</span></dt>
+								<dd>Макаров Е.Н.</dd>
+							</div>
+							<div class="speakers--description">
+								<dt><span class="hl__blue">Российский университет транспорта (МИИТ)</span></dt>
+								<dd>Гринчар Н. Н.</dd>
+							</div>
+							<div class="speakers--description">
+								<dt><span class="hl__blue">Институт строительства и ЖКХ НИУ «Высшая школа экономики»</span></dt>
+								<dd> Кулакова Н. В.</dd>
+							</div>
+						</dl>
 					</div>
 					<div class="wc--footer">
 						<a href="#" class="link__btn btn__white">Подробнее</a>
@@ -66,9 +83,14 @@
 			</div>
 			<br>
 		</section>
-		<section class="controls">
-			<label for="wider">Ширина контейнера: <span id="scr_wide">1000</span>px.</label><br>
-			<input type="range" value="1000" name="wider" id="wider" min="320" max="1200" oninput="changeWide(this.value)" autocomplete='off'>
+		<details class="controls">
+			<summary>Настройки</summary>
+			<label for="wider"><del>Ширина контейнера: <span id="scr_wide">1000</span>px.</del></label><br>
+			<input type="range" value="1000" name="wider" id="wider" min="320" max="1200" oninput="changeWide(this.value)" autocomplete='off' disabled>
+			<p class="note">
+				Для проверки адаптивности элемента, меняй ширину окна браузера <br>
+				Или зайди в режим адаптивного дизайна (Cmd+Opt+P)
+			</p>
 			<br>
 			<input type="radio" name="type" id="planned" onclick="changeType(this.id)" checked autocomplete='off'>
 			<label for="planned">Запланированный</label><br>
@@ -88,7 +110,7 @@
 			<label for="one">Одна кнопка</label><br>
 			<input type="radio" name="btns" id="none"  onclick="buttons('none')" autocomplete='off'>
 			<label for="none">Без кнопок</label>
-		</section>
+		</details>
 	</main>
 	<script>
 
