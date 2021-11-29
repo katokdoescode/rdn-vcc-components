@@ -73,20 +73,20 @@ button, .link__btn {
 	border-color: var(--dark-blue);
 }
 
-.btn__white:hover, .btn__white:focus {
+/* .btn__white:hover, .btn__white:focus {
 	color: #ffffff;
 	background-color: var(--dark-blue);
-}
+} */
 
 .btn__blue {
 	color: #ffffff;
 	background-color: var(--dark-blue);
 }
 
-.btn__blue:hover, .btn__blue:focus {
+/* .btn__blue:hover, .btn__blue:focus {
 	color: var(--dark-blue);
 	background-color: #ffffff;
-}
+} */
 
 .btn__icon_line {
 	padding: 10px;
@@ -324,7 +324,7 @@ button, .link__btn {
 }
 
 
-.wc__past .link__btn:hover,
+/* .wc__past .link__btn:hover,
 .wc__past button:hover {
 	background-color: var(--dark-gray);
 	color: #ffffff;
@@ -333,7 +333,7 @@ button, .link__btn {
 .wc__past .btn__blue:hover {
 	background-color: #ffffff;
 	color: var(--dark-gray);
-}
+} */
 
 .wc__past .wc--speakers .hl__blue,
 .wc__past hr {
