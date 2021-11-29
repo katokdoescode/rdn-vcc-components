@@ -178,8 +178,8 @@ button, .link__btn {
 
 .wc--header {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: center;
 	font-size: var(--subheading-fs);
 	font-weight: var(--subheading-fw);
 	background-color: var(--dark-blue);
@@ -187,7 +187,15 @@ button, .link__btn {
 	padding: 10px 21px;
 }
 
-.wc--header .on-air {
+.wc--datetime {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-basis: 100%;
+	margin: 0;
+}
+
+.wc--datetime .on-air {
 	align-self: center;
 	text-align: center;
 	width: 100%;
@@ -313,6 +321,18 @@ button, .link__btn {
 .wc__past .btn__blue {
 	background-color: var(--dark-gray);
 	color: #ffffff;
+}
+
+
+.wc__past .link__btn:hover,
+.wc__past button:hover {
+	background-color: var(--dark-gray);
+	color: #ffffff;
+}
+
+.wc__past .btn__blue:hover {
+	background-color: #ffffff;
+	color: var(--dark-gray);
 }
 
 .wc__past .wc--speakers .hl__blue,
