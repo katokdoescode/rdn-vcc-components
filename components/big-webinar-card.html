@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://unpkg.com/spacingjs" defer></script>
+	<title>Большая карточка вебинара</title>
+	<style>
+		.controls {
+			width: 200px;
+			padding: 10px;
+			position: fixed;
+			bottom: 0;
+			background-color: white;
+			box-shadow: 2px -2px #f2f2f2;
+		}
+
+		.note {
+			margin: 0;
+			padding: 7px;
+			border-radius: 10px;
+			font-size: smaller;
+			border: 2px solid #f2f2f2;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Большая карточка вебинара</h1>
+		<nav>
+			<a href="../">⬅️ Назад к списку</a>
+		</nav>
+		<p>Наверди курсор на элемент и нажми ALT, затем наведи курсор на другой элемент и увидишь расстояния и размеры.</p>
+		<br>
+		<!-- 
+			bwc__past - прошедший вебинар 
+			bwc__on-air - в эфире
+		-->
+		<div class="big-webinar-card">
+			<aside class="bwc--status">
+				<strong id="planned" class="status--heading" >Запланирован:</strong>
+				<strong id="onair" class="status--heading" hidden>Проходит прямо сейчас</strong>
+				<strong id="past" class="status--heading" hidden>Прошел:</strong>
+				<time class="bwc--datetime" datetime="2021-12-02T16:00:00">
+					<span>16:00</span><br>
+					<span>02.12.2021</span>
+				</time>
+			</aside>
+			<article class="bwc--main">
+				<h3>“Обзор актуальных методик Министерства строительства и жилищно-коммунального хозяйства”</h3>
+				<p>Его описание ТР ТС 014/2011. Технический регламент Таможенного союза. Безопасность автомобильных дорог. Утвержден Решением Комиссии Таможенного Союза от 18.10.2011 №827 и устанавливает минимально необходимые требования безопасности к автомобильным дорогам и процессам их проектирования, строительства, реконструкции, капитального ремонта и эксплуатации, а также формы и порядок оценки соответствия этим требованиям.Его описание ТР ТС 014/2011. Технический регламент Таможенного союза. Безопасность автомобильных дорог. Утвержден Решением Комиссии Таможенного Союза от 18.10.2011 №827 и устанавливает минимально необходимые требования безопасности к автомобильным дорогам и процессам их проектирования, строительства, реконструкции, капитального ремонта и эксплуатации, а также формы и порядок оценки соответствия этим требованиям.</p>
+				<hr>
+				<dl class="wc--speakers dl__theme" aria-label="Список спикеров">
+					<div class="speakers--description">
+						<dt><span class="hl__blue">ФАУ “РОСДОРНИИ”</span></dt>
+						<dd>Макаров Е.Н.</dd>
+					</div>
+					<div class="speakers--description">
+						<dt><span class="hl__blue">Российский университет транспорта (МИИТ)</span></dt>
+						<dd>Гринчар Н. Н.</dd>
+					</div>
+					<div class="speakers--description">
+						<dt><span class="hl__blue">Институт строительства и ЖКХ НИУ «Высшая школа экономики»</span></dt>
+						<dd> Кулакова Н. В.</dd>
+					</div>
+				</dl>
+				<div class="bwc--footer bwc--buttons">
+					<a href="#" id="subscribe" class="link__btn btn__blue">Записаться</a>
+					<a href="#" id="materials" class="link__btn btn__white" hidden>Материалы</a>
+					<a href="#" id="watchpast" class="link__btn btn__blue" hidden>Смотреть в записи</a>
+					<a href="#" id="join" class="link__btn btn__blue" hidden>Присоедениться</a>
+				</div>
+			</article>
+		</div>
+		<details class="controls">
+			<summary>Настройки</summary>
+			<label for="wider"><del>Ширина контейнера: <span id="scr_wide">1000</span>px.</del></label><br>
+			<input type="range" value="1000" name="wider" id="wider" min="320" max="1200" oninput="changeWide(this.value)" autocomplete='off' disabled>
+			<p class="note">
+				Для проверки адаптивности элемента, меняй ширину окна браузера <br>
+				Или зайди в режим адаптивного дизайна (Cmd+Opt+P)
+			</p>
+			<br>
+			<input type="radio" name="btns" id="two" onclick="buttons(false)" checked autocomplete='off'>
+			<label for="two">Запланированный</label><br>
+			<input type="radio" name="btns" id="one"  onclick="buttons(true)" autocomplete='off'>
+			<label for="one">В эфире</label><br>
+			<input type="radio" name="btns" id="none"  onclick="buttons('none')" autocomplete='off'>
+			<label for="none">Прошедший</label>
+		</details>
+	</main>
+	<script>
+		const buttons = (bool) => {
+			const cards = document.querySelectorAll('.big-webinar-card');
+			const headers = {
+				planned: document.getElementById('planned'),
+				onair: document.getElementById('onair'),
+				past: document.getElementById('past'),
+			}
+
+			const buttons = {
+				materials: document.getElementById('materials'),
+				watchpast: document.getElementById('watchpast'),
+				subscribe: document.getElementById('subscribe'),
+				join: document.getElementById('join'),
+			}
+			cards.forEach((e)=> {
+				if(bool === false) {
+					if(e.classList.contains('bwc__past')) e.classList.remove('bwc__past')
+					if(e.classList.contains('bwc__on-air')) e.classList.remove('bwc__on-air')
+					headers.onair.hidden = headers.past.hidden = true
+					headers.planned.hidden = false
+					buttons.join.hidden = buttons.watchpast.hidden = buttons.materials.hidden = true
+					buttons.subscribe.hidden = false
+				} else if (bool === true) {
+					if(e.classList.contains('bwc__past')) e.classList.remove('bwc__past')
+					if(e.classList.contains('bwc__on-air')) e.classList.remove('bwc__on-air')
+					e.classList.add('bwc__on-air')
+					headers.planned.hidden = headers.past.hidden = true
+					headers.onair.hidden = false
+					buttons.subscribe.hidden = buttons.watchpast.hidden = buttons.materials.hidden = true
+					buttons.join.hidden = false
+				} else {
+					if(e.classList.contains('bwc__past')) e.classList.remove('bwc__past')
+					if(e.classList.contains('bwc__on-air')) e.classList.remove('bwc__on-air')
+					e.classList.add('bwc__past')
+					headers.planned.hidden = headers.onair.hidden = true
+					headers.past.hidden = false
+					buttons.subscribe.hidden = buttons.join.hidden = true
+					buttons.watchpast.hidden = buttons.materials.hidden = false
+				}
+			}) 
+		}
+	</script>
+</body>
+<html

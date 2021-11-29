@@ -168,7 +168,8 @@ button, .link__btn {
 	}
 }
 
-.webinar-card hr {
+.webinar-card hr,
+.big-webinar-card hr {
 	color: var(--dark-blue);
 	border-color: var(--dark-blue);
 	border: 1px solid var(--dark-blue);
@@ -343,6 +344,96 @@ button, .link__btn {
 .wc__past hr {
 	color: var(--gray);
 	border-color: var(--gray);
+}
+
+/* BIG WEBINAR CARD */
+
+.big-webinar-card {
+	display: grid;
+	grid-template-columns: 1fr 3.14159265fr;
+	column-gap: 21px;
+}
+
+/* NOTE: Надо поменять на ocntainer-queries */
+@media screen and (max-width: 730px) {
+	.big-webinar-card {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 3.14159265fr;
+		row-gap: 21px;
+	}
+}
+
+.bwc--status {
+	border: 2px solid var(--dark-blue);
+	border-radius: 9px;
+	max-height: 223px;
+	padding: 35px 42px;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.bwc--status .status--heading {
+	font-size: var(--subheading-fs);
+	margin-bottom: 35px;
+	text-align: center;
+}
+
+.bwc--status time {
+	font-size: var(--heading-fs);
+	font-weight: var(--subheading-fw);
+	color: var(--dark-blue);
+	text-align: center;
+}
+
+.bwc--buttons {
+	display: flex;
+	justify-content: stretch;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+
+.bwc--buttons .link__btn,
+.bwc--buttons button {
+	flex: 1 0 230px;
+
+}
+
+.bwc__past .hl__blue {
+	color: var(--gray);
+}
+
+.bwc__past hr,
+.bwc__past .btn__white,
+.bwc__past time {
+	color: var(--dark-gray)
+}
+
+.bwc__past hr,
+.bwc__past .btn__white,
+.bwc__past .btn__blue,
+.bwc__past .bwc--status {
+	border-color: var(--dark-gray);
+}
+
+.bwc__past .btn__blue {
+	background-color: var(--dark-gray);
+}
+
+.bwc__on-air .bwc--status {
+	background-color: var(--light-blue);
+	border-color: var(--light-blue);
+	color: #ffffff;
+}
+
+.bwc__on-air .status--heading {
+	margin-bottom: unset;
+}
+
+.bwc__on-air .bwc--status time {
+	display: none;
 }
 
 /* KNOWLAGE BASE CARD */
