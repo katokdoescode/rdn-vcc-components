@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://unpkg.com/spacingjs" defer></script>
+	<title>Форма записи на вебинар</title>
+</head>
+<body>
+	<main>
+		<h1>Форма записи на вебинар</h1>
+		<nav>
+			<a href="../">⬅️ Назад к списку</a>
+		</nav>
+		<p>Наверди курсор на элемент и нажми ALT, затем наведи курсор на другой элемент и увидишь расстояния и размеры.</p>
+		<br>
+		<form action="#">
+			<!-- 
+				input__slim - Низкие поля ввода
+				agree-and-submit - Когда в контейнере и кнопка и галочка
+				required - Дополнительный класс для лейбла, для обязательных полей
+			 -->
+			<fieldset class="subscribe-form__wrapper">
+
+				<legend class="sf__title">
+					Записаться на участие в вебинаре
+					<button type="reset" class="btn__close" aria-label="Закрыть форму"></button>
+				</legend>
+
+				<fieldset class="form-row form-row__three-columns">
+					<div class="input-wrapper">
+						<label for="name"class="label__input required">Имя</label>
+						<input type="text" name="name" id="name" required class="input" placeholder="Данила">
+						<span class="validity-icon"></span>
+					</div>
+
+					<div class="input-wrapper">
+						<label for="surname"class="label__input required">Фамилия</label>
+						<input type="text" name="surname" id="surname" required class="input" placeholder="Андреев">
+						<span class="validity-icon"></span>
+					</div>
+
+					<div class="input-wrapper">
+						<label for="middlename"class="label__input">Отчество</label>
+						<input type="text" name="middlename" id="middlename" class="input" placeholder="Дмитриевич">
+						<span class="validity-icon"></span>
+					</div>
+
+					<div class="input-wrapper">
+						<label for="county_subject"class="label__input required">Субъект РФ</label>
+						<select name="county_subject" id="county_subject" required class="select" autocomplete="off">
+							<option>Краснодарский край</option>
+							<option>Красноярский край</option>
+							<option>Красногорск</option>
+						</select>
+						<span class="expand-icon"></span>
+					</div>
+
+					<div class="input-wrapper">
+						<label for="organizatoon"class="label__input required">Организация</label>
+						<input type="text" name="organizatoon" id="organizatoon" required class="input" placeholder="ФАУ 'РОСДОРНИИ'">
+						<span class="validity-icon"></span>
+					</div>
+
+					<div class="input-wrapper">
+						<label for="position"class="label__input required">Должность</label>
+						<input type="text" name="position" id="position" required class="input" placeholder="Специалист">
+						<span class="validity-icon"></span>
+					</div>
+				</fieldset>
+
+				<div class="hr__wrapper"><hr class="hr__blue"></div>
+
+				<fieldset class="form-row form-row__two-columns">
+					<div class="input-wrapper">
+						<label for="email"class="label__input required">Электронный адрес</label>
+						<input type="email" name="email" id="email" required class="input" placeholder="danila@organization.com">
+						<span class="validity-icon"></span>
+					</div>
+
+					<div class="input-wrapper">
+						<label for="tel"class="label__input required">Контактный телефон</label>
+						<input type="tel" name="tel" id="tel" required class="input" placeholder="89998887766" pattern="^((8|\+7)[\- ]?)?(\(?\d{3,4}\)?[\- ]?)?[\d\- ]{5,10}$">
+						<span class="validity-icon"></span>
+					</div>
+
+					<fieldset class="agree-and-submit form-row__submit agree-and-submit">
+						<label class="label__checkbox">
+							<input type="checkbox" name="remember_me" id="remember_me">
+							Запомнить меня
+						</label>
+						<button type="submit" class="btn__blue">Записаться</button>
+					</fieldset>
+				</fieldset>
+			</fieldset>
+		</form>
+	</main>	
+</body>
+</html>

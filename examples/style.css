@@ -1,7 +1,0 @@
-input:valid {
-	border-color: lightgreen;
-}
-
-input:invalid {
-	border-color: tomato;
-}
