@@ -215,6 +215,9 @@ button:disabled, .link__btn:disabled {
 	justify-content: flex-start;
 	flex-wrap: wrap;
 	gap: 10px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 .btn__filter-name {
