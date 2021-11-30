@@ -9,7 +9,7 @@
 	<script src="https://unpkg.com/spacingjs" defer></script>
 	<style>
 		.controls {
-			width: 200px;
+			width: 300px;
 			padding: 10px;
 			position: fixed;
 			bottom: 0;
@@ -54,12 +54,18 @@
 			<label for="wider">Ширина контейнера: <span id="scr_wide">1000</span>px.</label><br>
 			<input type="range" value="1000" name="wider" id="wider" min="320" max="1200" oninput="changeWide(this.value)" autocomplete='off'>
 			<br>
-			<input type="radio" name="type" id="nofooter" onclick="changeType(this.id)" checked autocomplete='off'>
-			<label for="nofooter">Без ничней части</label><br>
-			<input type="radio" name="type" id="footer" onclick="changeType(this.id)" autocomplete='off'>
-			<label for="footer">С нижней частью, тип материала и дата</label><br>
-			<input type="radio" name="type" id="count" onclick="changeType(this.id)" autocomplete='off'>
-			<label for="count">С количеством материалов</label>
+			<label for="nofooter" class="label__checkbox">
+				<input type="radio" name="type" id="nofooter" onclick="changeType(this.id)" checked autocomplete='off'>
+				Без ничней части
+			</label><br>
+			<label for="footer" class="label__checkbox">
+				<input type="radio" name="type" id="footer" onclick="changeType(this.id)" autocomplete='off'>
+				С нижней частью, тип материала и дата
+			</label><br>
+			<label for="count" class="label__checkbox">
+				<input type="radio" name="type" id="count" onclick="changeType(this.id)" autocomplete='off'>
+				С количеством материалов
+			</label>
 		</section>
 	</main>
 	<script>

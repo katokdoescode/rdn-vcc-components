@@ -690,6 +690,7 @@ button, .link__btn {
 	justify-content: stretch;
 	flex-wrap: wrap;
 	gap: 16px;
+	margin-top: 38px;
 }
 
 .bwc--buttons .link__btn,

@@ -9,7 +9,7 @@
 	<title>Большая карточка вебинара</title>
 	<style>
 		.controls {
-			width: 200px;
+			width: 300px;
 			padding: 10px;
 			position: fixed;
 			bottom: 0;
@@ -83,12 +83,18 @@
 				Или зайди в режим адаптивного дизайна (Cmd+Opt+P)
 			</p>
 			<br>
-			<input type="radio" name="btns" id="two" onclick="buttons(false)" checked autocomplete='off'>
-			<label for="two">Запланированный</label><br>
-			<input type="radio" name="btns" id="one"  onclick="buttons(true)" autocomplete='off'>
-			<label for="one">В эфире</label><br>
-			<input type="radio" name="btns" id="none"  onclick="buttons('none')" autocomplete='off'>
-			<label for="none">Прошедший</label>
+			<label for="two" class="label__checkbox">
+				<input type="radio" name="btns" id="two" onclick="buttons(false)" checked autocomplete='off'>
+				Запланированный
+			</label><br>
+			<label for="one" class="label__checkbox">
+				<input type="radio" name="btns" id="one"  onclick="buttons(true)" autocomplete='off'>
+				В эфире
+			</label><br>
+			<label for="none" class="label__checkbox">
+				<input type="radio" name="btns" id="none"  onclick="buttons('none')" autocomplete='off'>
+				Прошедший
+			</label>
 		</details>
 	</main>
 	<script>
