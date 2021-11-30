@@ -201,11 +201,50 @@ button:disabled, .link__btn:disabled {
 	background-position: center;
 	background-size: 21px;
 	background-repeat: no-repeat;
+	border: none;
+	border-radius: 0;
 	width: 21px;
 	height: 21px;
 	padding: 0;
 	margin: 0;
 	align-self: center;
+}
+
+.filters-wrapper {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.btn__filter-name {
+	cursor: auto;
+	display: grid;
+	grid-template-columns: 1fr 12px;
+	grid-template-rows: 1fr;
+	background-color: var(--light-blue);
+	border-color: var(--light-blue);
+	text-align: start;
+	column-gap: 25px;
+	width: max-content;
+	max-width: 284px;
+	max-height: 34px;
+	color: #ffffff;
+	padding: 6px 14px;
+}
+
+.btn__filter-name p {
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: inherit;
+}
+
+.btn__filter-name .btn__close {
+	width: 12px;
+	height: 12px;
+	background-size: 12px;
 }
 
 /* INPUTS */
