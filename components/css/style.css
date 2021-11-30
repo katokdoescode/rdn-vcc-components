@@ -81,6 +81,10 @@ input, select, button, textarea {
 	font-weight: inherit;
 }
 
+textarea {
+	resize: none;
+}
+
 button, .link__btn {
 	display: block;
 	text-align: center;
@@ -647,7 +651,8 @@ input[type="radio"]:checked::before {
 }
 
 /* SUBSCRIBE FORM */
-.subscribe-form__wrapper {
+.subscribe-form__wrapper,
+.form__ask-expert__wrapper {
 	display: grid;
 	grid-template-rows: max-content 2px max-content;
 	row-gap: 28px;
@@ -658,7 +663,15 @@ input[type="radio"]:checked::before {
 	border-radius: 9px;
 }
 
-.subscribe-form__wrapper legend {
+.form__ask-expert__wrapper {
+	grid-template-rows: repeat(3, max-content);
+	padding: 0 21px;
+	border: none;
+	row-gap: 25px;
+}
+
+.subscribe-form__wrapper legend,
+.form__ask-expert__wrapper legend {
 	display: flex;
 	justify-content: space-between;
 	position: absolute;
@@ -672,8 +685,14 @@ input[type="radio"]:checked::before {
 	font-size: var(--subheading-fs);
 }
 
+.form__ask-expert__wrapper legend {
+	font-size: var(--regular-fs);
+	font-weight: var(--regular-fw);
+}
+
 @media screen and (max-width: 480px) {
-	.subscribe-form__wrapper legend {
+	.subscribe-form__wrapper legend,
+	.form__ask-expert__wrapper legend {
 		font-size: var(--regular-fs);
 	}
 }
@@ -764,6 +783,10 @@ input[type="radio"]:checked::before {
 	.agree-and-submit button {
 		grid-column: 1;
 	}
+}
+
+.form__ask-expert {
+
 }
 
 /* BIG WEBINAR CARD */
