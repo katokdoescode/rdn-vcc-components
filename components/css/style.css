@@ -327,7 +327,13 @@ button:disabled, .link__btn:disabled {
 
 .input:invalid:placeholder-shown {
 	border-color: var(--dark-blue);
-	}
+}
+
+.input:focus,
+.input:focus:placeholder-shown {
+	border-color: var(--light-blue);
+	outline: none;
+}
 
 :placeholder-shown {
 	color: var(--light-gray);
@@ -679,7 +685,6 @@ input[type="radio"]:checked::before {
 	padding: 21px 0;
 	margin: 0;
 }
-
 
 .form-row__three-columns {
 	grid-template-columns: repeat(3, 1fr);
