@@ -77,20 +77,28 @@ button, .link__btn {
 	border-color: var(--dark-blue);
 }
 
-/* .btn__white:hover, .btn__white:focus {
-	color: #ffffff;
-	background-color: var(--dark-blue);
-} */
-
 .btn__blue {
 	color: #ffffff;
 	background-color: var(--dark-blue);
 }
 
-/* .btn__blue:hover, .btn__blue:focus {
-	color: var(--dark-blue);
-	background-color: #ffffff;
-} */
+.btn__filter {
+	padding: 8px 38px;
+	border-radius: 30px;
+	color: #000000;
+	border-color: var(--light-gray);
+}
+
+.filter__active {
+	background-color: var(--dark-blue);
+	border-color: var(--dark-blue);
+	color: #ffffff;
+}
+
+.filter__aside {
+	padding: 16px;
+	border-color: var(--dark-blue);
+}
 
 .btn__icon_line {
 	padding: 10px;
@@ -149,6 +157,8 @@ button, .link__btn {
 	background-position: center;
 	background-size: contain;
 }
+
+/* WEBINAR CARD */
 
 .webinar-card {
 	display: grid;
