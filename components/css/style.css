@@ -1383,9 +1383,8 @@ input[type="radio"]:checked::before {
 	display: grid;
 	grid-template-columns: 267px 1fr 1fr 1fr;
 	grid-template-rows: repeat(3, max-content);
-	row-gap: 31px;
+	gap: 31px 85px;
 	background-color: var(--dark-blue);
-	/* background-image: linear-gradient(to top, #ffffff 59px, var(--dark-blue) 59px 100%); */
 	box-shadow: 1040px 0 var(--dark-blue),
 				-1040px 0 var(--dark-blue);
 	max-width: var(--block-width);
@@ -1438,8 +1437,10 @@ input[type="radio"]:checked::before {
 	display: grid;
 	grid-template-columns: repeat(2, max-content);
 	justify-content: center;
+	align-content: center;
 	gap: 25px;
-	margin-top: 11px;
+	margin-top: 21px;
+	margin-bottom: 16px;
 }
 
 .link__tel,
@@ -1448,7 +1449,6 @@ input[type="radio"]:checked::before {
 	align-items: center;
 	grid-template-columns: 30px max-content;
 	gap: 10px;
-	margin-bottom: 16px;
 }
 
 .link__tel::before,
