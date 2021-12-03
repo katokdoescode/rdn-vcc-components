@@ -70,14 +70,14 @@ html {
 	font-size: var(--regular-fs);
 }
 
-h1 {
+h1, h2 {
 	font-size: var(--heading-fs);
 	font-weight: var(--heading-fw);
 	padding: 0;
 	margin: 0;
 }
 
-h2, h3, h4 {
+h3, h4 {
 	font-size: var(--subheading-fs);
 	font-weight: var(--subheading-fw);
 	padding: 0;
@@ -98,6 +98,32 @@ textarea {
 	resize: none;
 }
 
+/* HEADINGS */
+.heading {
+	color: var(--dark-blue);
+	text-align: center;
+	padding: 25px 0;
+}
+
+.heading__hr {
+	display: grid;
+	grid-template-columns: 50vw max-content 50vw;
+	justify-content: center;
+	align-items: center;
+	column-gap: 10px;
+}
+
+.heading__hr::after,
+.heading__hr::before {
+	position: relative;
+	display: block;
+	content: '';
+	/* top: 20px; */
+	height: 2px;
+	background-color: var(--dark-blue);
+}
+
+/* BUTTONS */
 button, .link__btn {
 	display: block;
 	text-align: center;
