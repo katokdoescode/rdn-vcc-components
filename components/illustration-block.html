@@ -9,20 +9,20 @@
 	<title>Хедер</title>
 </head>
 <body class="vcc-body">
-	<main>
+	<main class="vcc-main">
 		<h1>Хедер</h1>
 		<nav>
 			<a href="../">⬅️ Назад к списку</a>
 		</nav>
 		<p>Наверди курсор на элемент и нажми ALT, затем наведи курсор на другой элемент и увидишь расстояния и размеры.</p>
 		<br>
-		<!-- 
-			ib-subscribe-v1 
+		<!--
+			ib-subscribe-v1
 			ib-subscribe-v2
 			ib-ask-expert-v1
 			ib-ask-expert-v2
 		-->
-		<section class="illustration-block ib-subscribe ib-subscribe-v1">
+		<section class="illustration-block ib-subscribe ib-subscribe-v1 illustration-block__bgicon">
 			<div class="ib--icon-block ib--bg__icon"></div>
 			<div class="ib--main">
 				<article class="ib--article">
@@ -38,6 +38,53 @@
 						<button type="submit" class="btn__white btn__white-border">Подписаться</button>
 					</div>
 				</form>
+			</div>
+		</section>
+
+		<section class="illustration-block ib-subscribe ib-subscribe-v2 illustration-block__bgicon">
+			<div class="ib--icon-block ib--bg__icon"></div>
+			<div class="ib--main">
+				<article class="ib--article">
+					<h4 class="ib--heading">Подписаться на обновления Базы знаний</h4>
+					<p class="ib--text">Получайте уведомления о появлении новых документов, методических указаний и других материалов в нашей Базе знаний!</p>
+				</article>
+				<form action="#">
+					<div class="form-row form-row__ib">
+						<div class="input-wrapper">
+							<input type="email" name="email" id="email" class="input input__white" placeholder="Ваша электронная почта...">
+							<span class="validity-icon"></span>
+						</div>
+						<button type="submit" class="btn__white btn__white-border">Подписаться</button>
+					</div>
+				</form>
+			</div>
+		</section>
+
+		<section class="illustration-block ib-subscribe ib-ask-expert-v1 illustration-block__bgicon">
+			<div class="ib--icon-block ib--bg__icon"></div>
+			<div class="ib--main">
+				<article class="ib--article">
+					<h4 class="ib--heading">Задай свой вопрос эксперту!</h4>
+					<p class="ib--text">На нашем портале Вы можете связаться напрямую с экспертами дорожного хозяйства и задать им свой вопрос. </p>
+				</article>
+					<div class="form-row form-row__ib">
+						<a type="submit" class="link__btn btn__white btn__white-border">Задать вопрос</a>
+					</div>
+			</div>
+		</section>
+
+		<section class="illustration-block ib-subscribe ib-ask-expert-v2 illustration-block__bgicon">
+			<div class="ib--icon-block ib--bg__icon"></div>
+			<div class="ib--main">
+				<article class="ib--article">
+					<h4 class="ib--heading">Задай свой вопрос эксперту!</h4>
+					<p class="ib--text">На нашем портале Вы можете связаться напрямую с экспертами дорожного хозяйства и задать им свой вопрос.</p>
+					<p class="ib--text">Ответ будет опубликован на нашем сайте. Кстати, там же вы можете посмотреть ответы на вопросы других пользователей.</p>
+				</article>
+					<div class="form-row">
+						<a type="submit" class="link__btn btn__blue btn__transparent-bg btn__white-border">К другим ответам</a>
+						<a type="submit" class="link__btn btn__white btn__white-border">Задать вопрос</a>
+					</div>
 			</div>
 		</section>
 	</main>
